@@ -20,7 +20,7 @@ import java.util.Set;
  */
 public class IE3DHashMap<K1, K2, K3, V> {
 
-    private final HashMap<K1, HashMap<K2, HashMap<K3, V>>> map = new HashMap<K1, HashMap<K2, HashMap<K3, V>>>();
+    private final HashMap<K1, HashMap<K2, HashMap<K3, V>>> map = new HashMap<>();
 
     /**
      * Existence check of a value (or <tt>null</tt>) mapped to the keys.
@@ -85,12 +85,12 @@ public class IE3DHashMap<K1, K2, K3, V> {
      *            first key
      * @return the the innermost hashmap
      */
-    public IE2DHashMap<K2, K3, V> getAs2d(final K1 firstKey) {
+    public IE2DHashMap<K2, K3, V> getAs2D(final K1 firstKey) {
         final HashMap<K2, HashMap<K3, V>> innerMap1 = map.get(firstKey);
         if( innerMap1 != null ) {
-            return new IE2DHashMap<K2, K3, V>(innerMap1);
+            return new IE2DHashMap<>(innerMap1);
         } else {
-            return new IE2DHashMap<K2, K3, V>();
+            return null;
         }
 
     }
@@ -153,13 +153,13 @@ public class IE3DHashMap<K1, K2, K3, V> {
      *            the value to be inserted. <tt>null</tt> may be inserted as well.
      * @return null or the value the insert is replacing.
      */
-    public Object set(final K1 firstKey, final K2 secondKey, final K3 thirdKey, final V value) {
+    public Object put(final K1 firstKey, final K2 secondKey, final K3 thirdKey, final V value) {
         // existence check on inner map1
         HashMap<K2, HashMap<K3, V>> innerMap1 = map.get(firstKey);
 
         if( innerMap1 == null ) {
             // no inner map, create it
-            innerMap1 = new HashMap<K2, HashMap<K3, V>>();
+            innerMap1 = new HashMap<>();
             map.put(firstKey, innerMap1);
         }
 
@@ -167,7 +167,7 @@ public class IE3DHashMap<K1, K2, K3, V> {
         HashMap<K3, V> innerMap2 = innerMap1.get(secondKey);
         if( innerMap2 == null ) {
             // no inner map, create it
-            innerMap2 = new HashMap<K3, V>();
+            innerMap2 = new HashMap<>();
             innerMap1.put(secondKey, innerMap2);
         }
 

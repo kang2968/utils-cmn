@@ -37,15 +37,15 @@ public class IEFileUtils {
 	/**
 	 * 创建文件
 	 * 
-	 * @param filepath
+	 * @param filePath
 	 *            文件全路径
 	 * @param delete
 	 *            当文件已存在时是否删除
 	 * @return 当发生错误时返回false
 	 */
-	public static boolean createFile(final String filepath, final boolean delete) {
-		IEValidateUtils.notBlank(filepath, "The filePath can't be blank");
-		return createFile(new File(filepath), delete);
+	public static boolean createFile(final String filePath, final boolean delete) {
+		IEValidateUtils.notBlank(filePath, "The filePath can't be blank");
+		return createFile(new File(filePath), delete);
 	}
 
 	/**
@@ -296,8 +296,8 @@ public class IEFileUtils {
 		IEValidateUtils.notBlank(url, "The url can't be blank");
 		IEValidateUtils.notNull(destFile, "The destFile can't be null");
 		HttpURLConnection conn = null;
-		boolean result = false;
-		long contentLength = -1;
+		boolean result;
+		long contentLength;
 		try {
 			conn = (HttpURLConnection) new URL(url).openConnection();
 			conn.setConnectTimeout(connectTimeoutSecond * 1000);
@@ -474,10 +474,10 @@ public class IEFileUtils {
 			}
 			stringBuilder.append(hv.toUpperCase());
 		}
-		String filehead = stringBuilder.toString();
+		String fileHead = stringBuilder.toString();
 		// 获取文件头类型
 		for (IEFileHeadTypeEnum f : IEFileHeadTypeEnum.values()) {
-			if (filehead.startsWith(f.getHex())) {
+			if (fileHead.startsWith(f.getHex())) {
 				return f;
 			}
 		}

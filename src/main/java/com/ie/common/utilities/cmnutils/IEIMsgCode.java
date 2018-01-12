@@ -24,7 +24,7 @@ public interface IEIMsgCode {
     /**
      * handle successfully
      */
-    IEIMsgCode Success = new IEIMsgCode() {
+    IEIMsgCode SUCCESS = new IEIMsgCode() {
         @Override
         public long getCode() {
             return 0;
@@ -39,7 +39,7 @@ public interface IEIMsgCode {
     /**
      * handle failed
      */
-    IEIMsgCode Fail = new IEIMsgCode() {
+    IEIMsgCode FAIL = new IEIMsgCode() {
         @Override
         public long getCode() {
             return -1;
@@ -54,7 +54,7 @@ public interface IEIMsgCode {
     /**
      * there are some failed validation
      */
-    IEIMsgCode BadRequest = new IEIMsgCode() {
+    IEIMsgCode BADR_EQUEST = new IEIMsgCode() {
         @Override
         public long getCode() {
             return 400;
@@ -69,7 +69,7 @@ public interface IEIMsgCode {
     /**
      * failed authorization
      */
-    IEIMsgCode UnAuthorized = new IEIMsgCode() {
+    IEIMsgCode UNAUTHORIZED = new IEIMsgCode() {
         @Override
         public long getCode() {
             return 401;
@@ -84,7 +84,7 @@ public interface IEIMsgCode {
     /**
      * there is not any thing to back guest or the thing needed to handle dose not exist
      */
-    IEIMsgCode NotFound = new IEIMsgCode() {
+    IEIMsgCode NOT_FOUND = new IEIMsgCode() {
         @Override
         public long getCode() {
             return 404;
@@ -99,7 +99,7 @@ public interface IEIMsgCode {
     /**
      * there is some error in server
      */
-    IEIMsgCode InternalError = new IEIMsgCode() {
+    IEIMsgCode INTERNAL_ERROR = new IEIMsgCode() {
         @Override
         public long getCode() {
             return 500;

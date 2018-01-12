@@ -38,7 +38,7 @@ public class IEContentResponse<T> implements IEIResMsgCode<T>{
      * @param data
      */
     public IEContentResponse(T data){
-        this(IEIMsgCode.Success);
+        this(IEIMsgCode.SUCCESS);
         this.data = data;
     }
 
