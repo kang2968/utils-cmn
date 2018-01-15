@@ -68,7 +68,7 @@ public class IEDateUtils {
      */
     public static Date parseOrNull(SimpleDateFormat format, String source) {
         try {
-            format.parse(source);
+            return format.parse(source);
         } catch (ParseException e) {
         }
         return null;
