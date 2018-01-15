@@ -32,7 +32,17 @@ public class IEStringUtils {
     public static int length(final String value){
         return value == null ? 0 : value.length();
     }
-
+    
+    /**
+     * blank when value is null
+     *
+     * @param value
+     * @return
+     */
+    public static String nullToBlank(final String value) {
+        return value == null ? "" : value;
+    }
+    
     /**
      * check whether charSequence is blank
      * @param value

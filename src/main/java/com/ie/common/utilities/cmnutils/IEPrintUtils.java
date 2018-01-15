@@ -21,6 +21,16 @@ public class IEPrintUtils {
     public static String printCode(final IEIMsgCode msgCode){
         return printMsg(msgCode.getCode(), msgCode.getMsg());
     }
+    
+    /**
+     * print message code
+     *
+     * @param msgCode
+     * @return null when msgCode is null
+     */
+    public static String printCodeOrNull(final IEIMsgCode msgCode) {
+        return msgCode != null ? printCode(msgCode) : null;
+    }
 
     /**
      * print normal message
@@ -56,6 +66,16 @@ public class IEPrintUtils {
         } catch (Exception e1) {
             throw new RuntimeException("Print Trace Failed", e1);
         }
+    }
+    
+    /**
+     * print stack trace
+     *
+     * @param e
+     * @return null when e is null
+     */
+    public static String printTraceOrNull(final Throwable e) {
+        return e != null ? printTrace(e) : null;
     }
 
 }

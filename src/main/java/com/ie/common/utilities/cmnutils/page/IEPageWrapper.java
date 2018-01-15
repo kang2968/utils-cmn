@@ -79,4 +79,15 @@ public class IEPageWrapper<T> {
         this.list = list;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("IEPageWrapper:{");
+        builder.append("page=").append(this.page).append(", ");
+        builder.append("pageSize=").append(this.pageSize).append(", ");
+        builder.append("total=").append(this.total).append(", ");
+        builder.append("listSize=").append(this.list != null ? this.list.size() : 0);
+        builder.append("}");
+        return builder.toString();
+    }
 }
