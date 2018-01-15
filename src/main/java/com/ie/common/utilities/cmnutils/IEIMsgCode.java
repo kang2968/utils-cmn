@@ -54,7 +54,7 @@ public interface IEIMsgCode {
     /**
      * there are some failed validation
      */
-    IEIMsgCode BADR_EQUEST = new IEIMsgCode() {
+    IEIMsgCode BAD_REQUEST = new IEIMsgCode() {
         @Override
         public long getCode() {
             return 400;
@@ -110,5 +110,5 @@ public interface IEIMsgCode {
             return "Internal Server Error";
         }
     };
-
+    
 }
