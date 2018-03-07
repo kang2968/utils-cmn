@@ -94,6 +94,30 @@ public interface IEIMsgCode {
         }
     };
     
+    IEIMsgCode NO_CONTENT = new IEIMsgCode() {
+        @Override
+        public long getCode() {
+            return 204;
+        }
+        
+        @Override
+        public String getMsg() {
+            return "No Content";
+        }
+    };
+    
+    IEIMsgCode NOT_MODIFIED = new IEIMsgCode() {
+        @Override
+        public long getCode() {
+            return 304;
+        }
+        
+        @Override
+        public String getMsg() {
+            return "Not Modified";
+        }
+    };
+    
     /**
      * get message code
      *
